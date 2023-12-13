@@ -9,7 +9,7 @@
  * Return: 0 success 2 fail
  */
 
-Int ex(char **s, list_t *env, int n, char **com)
+int ex(char **s, list_t *env, int n, char **com)
 {
 	int e_v = 0;
 

@@ -7,30 +7,30 @@
  * Return: copy of fleshed out command
  */
 
-char _which(char *s, lists *env)
+char *which(char *s, lists *env)
 {
-	char *p, *cat = NULL, **toks;
+	char *p, *ct = NULL, **toks;
 	int i = 0;
 
-	c = _env("PATH", env);
-	toks = 
+	p = _env("PATH", env);
+	toks = str_token(p, ":");
 	free(p);
 
 	i = 0;
 	while (toks[i] != NULL)
 	{
 		if (toks[i][0] == '\0')
-			cat = getcwd(cat, 0);
+			ct = getcwd(ct, 0);
 		else
-			cat = strduplicate(toks[i]);
-		cat = strconcat(cat, "/");
-		cat = strconcat(cat, s);
-		if (access(cat, F_OK) == 0)
+			ct = strduplicate(toks[i]);
+		ct = strconcat(ct, "/");
+		ct = strconcat(ct, s);
+		if (access(ct, F_OK) == 0)
 		{
 			free_double_ptr(toks);
-			return (cat);
+			return (ct);
 		}
-		free(cat);
+		free(ct);
 		i++;
 	}
 	free_double_ptr(toks);

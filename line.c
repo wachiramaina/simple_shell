@@ -12,7 +12,7 @@ size_t _line(char **s)
 	ssize_t i = 0, size = 0, t_t = 0, num = 0, t_two = 0;
 	char buffer[1024];
 
-	while(t_two == 0 && (i = read(STDIN_FILENO, buff, 1024 - 1)))
+	while(t_two == 0 && (i = read(STDIN_FILENO, buffer, 1024 - 1)))
 	{
 		if (i == -1)
 			return (-1);
@@ -27,7 +27,7 @@ size_t _line(char **s)
 		{
 			i++;
 			*s = malloc(sizeof(char) * i);
-			*s = strcopy(*str, buffer);
+			*s = strcopy(*s, buffer);
 			size = i;
 			t_t = 1;
 		}

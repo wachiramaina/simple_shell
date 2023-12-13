@@ -16,16 +16,16 @@ size_t write_list(lists *l)
 		return (0);
 	for (len = 0; copy != NULL; len++)
 	{
-		if (copy->variable == NULL)
+		if (copy->var == NULL)
 		{
 			write(STDOUT_FILENO, "(nill)", 5);
 			write(STDOUT_FILENO, "\n", 1);
 		}
 		else
 		{
-			for (num = 0; (copy->variable)[num] != '\0'; c++)
+			for (num = 0; (copy->var)[num] != '\0'; copy++)
 				;
-			write(STDOUT_FILENO, copy->variable, num);
+			write(STDOUT_FILENO, copy->var, num);
 			write(STDOUT_FILENO, "\n", 1);
 		}
 		copy = copy->next;

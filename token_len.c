@@ -13,7 +13,7 @@ int tkn_len(char *s, int index, char delimiter)
 {
 	int i = 0;
 
-	for (; (str[index] != delimiter) && (s[index] != '\0'); i++)
+	for (; (s[index] != delimiter) && (s[index] != '\0'); i++)
 		index++;
 	return (i);
 }

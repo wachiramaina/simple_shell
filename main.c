@@ -13,7 +13,7 @@ int main(int ac, char **av, char **env)
 	(void)ac;
 	(void)av;
 
-	_prompt(env);
+	_promt(env);
 
 	return (0);
 }

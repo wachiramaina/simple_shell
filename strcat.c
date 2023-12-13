@@ -20,7 +20,7 @@ char *strconcat(char *dest, char *src)
 		total++;
 	}
 
-	dest = realloc(dest, len, sizeof(char) * total + 1);
+	dest = _realloc(dest, len, sizeof(char) * total + 1);
 
 	while (src[j] != '\0')
 	{

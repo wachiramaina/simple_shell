@@ -6,9 +6,9 @@
  * Return: linked list
  */
 
-list env_linked(char **v)
+lists *env_linked(char **v)
 {
-	list *h;
+	lists *h;
 	int i = 0;
 
 	h = NULL;

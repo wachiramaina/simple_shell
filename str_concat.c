@@ -18,7 +18,7 @@ char *str_concat(char *dest, char *src)
 	for (index = 0; src[index] != '\0'; index++)
 		len++;
 
-	dest = realloc(dest, i, sizeof(char) * len + 1);
+	dest = _realloc(dest, i, sizeof(char) * len + 1);
 
 	ind = 1;
 	while (src[ind] != '\0')

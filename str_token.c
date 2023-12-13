@@ -11,13 +11,13 @@
 char **str_token(char *s, char *delim)
 {
 	int buff_sz = 0, p = 0, ze = 0, len = 0, i = 0, si = 0, t = 0;
-	char **token = NULL; ch_d;
+	char **token = NULL, ch_d;
 
 	ch_d = delim[0];
 	s = rm_delim(s, ch_d);
 
-	buff_sz = tkn_len(s, ch_d);
-	token = malloc(sizeof(char *) * (buff_sz +));
+	buff_sz = del_size(s, ch_d);
+	token = malloc(sizeof(char *) * (buff_sz + 2));
 	if (token == NULL)
 		return (NULL);
 	for (si = 0; s[si] != '\0'; si++)
@@ -40,7 +40,7 @@ char **str_token(char *s, char *delim)
 			token[p][i] = '\0';
 			t++;
 		}
-		if (ze < si &&(s[ze + 1] != ch_d && s[ze + 1] != '/0'))
+		if (ze < si &&(s[ze + 1] != ch_d && s[ze + 1] != '\0'))
 			p++;
 		ze++;
 	}

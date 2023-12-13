@@ -18,7 +18,7 @@ int set_env(lists **env, char *env_name, char *dir_path)
 	ct = strduplicate(env_name);
 	ct = strconcat(ct, "=");
 	ct = strconcat(ct, dir_path);
-	i = fnd_env(*env, env_name);
+	i = find_environ(*env, env_name);
 
 	tmp = *env;
 	for (; ind < i; ind++)
@@ -26,7 +26,7 @@ int set_env(lists **env, char *env_name, char *dir_path)
 		tmp = tmp->next;
 	}
 	free(tmp->var);
-	tmp->vare = strduplicate(ct);
+	tmp->var = strduplicate(ct);
 	free(ct);
 	return(0);
 }

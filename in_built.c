@@ -10,7 +10,7 @@
  * Return: 1 or 0
  */
 
-int in_built(char **tkn, lists *env, int n, char ** cmd)
+int in_built(char **tkn, lists *env, int n, char **cmd)
 {
 	int i;
 
@@ -20,17 +20,17 @@ int in_built(char **tkn, lists *env, int n, char ** cmd)
 	}
 	else if (strcompare(tkn[0], "env") == 0)
 	{
-		__env(tkn, env);
+		print_env(tkn, env);
 		i = 1;
 	}
 	else if (strcompare(tkn[0], "setenv") == 0)
 	{
-		setenv(&env, tkn);
+		_setenviron(&env, tkn);
 		i = 1;
 	}
 	else if (strcompare(tkn[0], "unsetenv") == 0)
 	{
-		_unsetenv(&env, token);
+		_unsetenviron(&env, tkn);
 		i = 1;
 	}
 	return (i);

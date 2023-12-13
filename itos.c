@@ -6,12 +6,12 @@
  * Return: returns counts of digits
  */
 
-int len(int n)
+int len(int num)
 {
 	int count = 0;
-	int n = 0;
+	int n = num;
 
-	while (n > 9 || num < -9)
+	while (n > 9 || n < -9)
 	{
 		n /= 10;
 		count++;
@@ -27,11 +27,11 @@ int len(int n)
 
 char *_itos(int num)
 {
-	int d, t, i = 0, t = 0, x;
+	int d, v, i = 0, t = 0, x;
 	char *res;
 
 	d = num;
-	t = 1;
+	v = 1;
 
 	if (num < 0)
 		t = 1;
@@ -47,22 +47,22 @@ char *_itos(int num)
 	for (x = 0; d > 9 || d < -9; x++)
 	{
 		d /= 10;
-		t *= 10;
+		v *= 10;
 	}
-	for (d = n;  x >= 0; x--)
+	for (d = num;  x >= 0; x--)
 	{
 		if (d < 0)
 		{
-			res[i] = (d / t) * -1 + '0';
+			res[i] = (d / v) * -1 + '0';
 			i++;
 		}
 		else
 		{
-			res[i] = (d / t) + '0';
+			res[i] = (d / v) + '0';
 			i++;
 		}
-		d %= t;
-		t /= 10;
+		d %= v;
+		v /= 10;
 	}
 	res[i] = '\0';
 	return (res);

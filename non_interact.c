@@ -13,19 +13,19 @@ void non_interact(lists *env)
 	int cmd_no = 0, exit_st = 0;
 	char *cmd = NULL, *new_cmd = NULL, **new_line, **tkn;
 
-	x = cmd_line(&cmd);
-	if (i == 0)
+	x = _line(&cmd);
+	if (x == 0)
 	{
 		free(cmd);
 		exit(0);
 	}
 
 	new_cmd = cmd;
-	cmd = ignore_space(cmd);
+	cmd = ignore_wht_space(cmd);
 	new_line = str_token(cmd, "\n");
 	if (new_cmd != NULL)
 		free(new_cmd);
-	for (y = 0, new_line[y] != NULL; y++)
+	for (y = 0; new_line[y] != NULL; y++)
 	{
 		cmd_no++;
 		tkn = NULL;
@@ -36,7 +36,7 @@ void non_interact(lists *env)
 			y++;
 			continue;
 		}
-		exit_st = exe_cve(tk, env, cmd_no, new__line);
+		exit_st = exec(tkn, env, cmd_no);
 	}
 	free_double_ptr(new_line);
 	free_list(env);

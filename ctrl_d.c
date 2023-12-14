@@ -15,7 +15,7 @@ void ctrl_d(int i, char *cmd, lists *env)
 	{
 		free(cmd);
 		free_list(env);
-		if (isa_tty(STDIN_FILENO))
+		if (isatty(STDIN_FILENO))
 			write(STDOUT_FILENO, "\n", 1);
 		exit(0);
 	}

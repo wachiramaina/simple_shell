@@ -8,7 +8,7 @@
  * Return: void
  */
 
-void home_cd(lists *env. char *curr_dir)
+void home_cd(lists *env, char *curr_dir)
 {
 	char *hm = NULL;
 
@@ -16,9 +16,9 @@ void home_cd(lists *env. char *curr_dir)
 	set_env(&env, "OLDPWD", curr_dir);
 	free(curr_dir);
 	if (access(hm, F_OK) == 0)
-		chdir(home);
+		chdir(hm);
 	curr_dir = NULL;
-	curr_dir = get_cwd(curr_dir, 0);
+	curr_dir = getcwd(curr_dir, 0);
 	set_env(&env, "PWD", curr_dir);
 	free(curr_dir);
 	free(hm);

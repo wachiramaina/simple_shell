@@ -10,7 +10,7 @@
 void ext(char **str, lists *ev)
 {
 	free_double_ptr(str);
-	free_linked_list(ev);
+	free_list(ev);
 	_exit(0);
 }
 
@@ -26,7 +26,7 @@ int exec(char **s, lists *ev, int num)
 {
 	char *tmp;
 	int status = 0, t = 0;
-	pd_t pd;
+	pid_t pd;
 
 	if (access(s[0], F_OK) == 0)
 	{
@@ -34,11 +34,11 @@ int exec(char **s, lists *ev, int num)
 		t = 1;
 	}
 	else
-		tmp = _which(s[0], ev);
+		tmp = which(s[0], ev);
 
 	if (access(tmp, X_OK) != 0)
 	{
-		not_found(s[0], num, ev);
+		cmd_not_found(s[0], num, ev);
 		free_double_ptr(s);
 		return (127);
 	}
@@ -49,8 +49,8 @@ int exec(char **s, lists *ev, int num)
 		{
 			if (execve(tmp, s, NULL) == -1)
 			{
-				not_found(s[0], num, ev);
-				c_exit(s, ev);
+				cmd_not_found(s[0], num, ev);
+				ext(s, ev);
 			}
 		}
 		else

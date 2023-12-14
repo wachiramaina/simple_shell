@@ -30,7 +30,7 @@ int delim_count(char *s, char delim);
 lists *env_linked(char **v);
 void couldnt_cd(char *s, int n, lists *env);
 int print_env(char **str, lists *v);
-void illegal_num(char *s, lists *env, int n);
+void illegal_num(char *s, int n, lists *env);
 void cmd_not_found(char *s, int n, lists *env);
 int exec_cd(lists *env, char *curr_dir, char *dir_path, char *s, int  n);
 int ex(char **s, lists *env, int n, char **com);
@@ -66,5 +66,5 @@ int _setenviron(lists **v, char **str);
 char *which(char *s, lists *env);
 int exec(char **s, lists *ev, int num);
 void ext(char **str, lists *ev);
-
+char *get_environ(char *str, lists *v);
 #endif /* MAIN_H*/

@@ -10,6 +10,6 @@
 char *ignore_wht_space(char *s)
 {
 	for (; *s == ' ' || *s == '\n'; s++)
-
+		;
 		return(s);
 }

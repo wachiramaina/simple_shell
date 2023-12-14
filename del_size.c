@@ -13,7 +13,7 @@ int del_size(char *s, char del)
 
 	while (s[i] != '\0')
 	{
-		if (str[i] == del)
+		if (s[i] == del)
 		{
 			num_del++;
 		}

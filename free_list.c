@@ -1,4 +1,4 @@
-#inlcude "main.h"
+#include "main.h"
 
 /**
  * free_list - frees a linked list
@@ -9,13 +9,13 @@
 
 void free_list(lists *h)
 {
-	lists tmp;
+	lists *tmp;
 
 	while (h != NULL)
 	{
 		tmp = h;
 		h = h->next;
-		free(tmp->variable);
+		free(tmp->var);
 		free(tmp);
 	}
 }

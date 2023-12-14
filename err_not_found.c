@@ -1,4 +1,4 @@
-#inlcude "main.h"
+#include "main.h"
 
 /**
  * cmd_not_found - prints the error "sh: lss: not found"
@@ -15,20 +15,20 @@ void cmd_not_found(char *s, int n, lists *env)
 	char *sh, *num;
 
 	sh = _env("_", env);
-	for (i = 0; sh[i] != '\0', i++)
+	for (i = 0; sh[i] != '\0'; i++)
 		;
 	write(STDOUT_FILENO, sh, i);
 	free(sh);
 	write(STDOUT_FILENO, ":", 2);
 	num = ito_str(n);
 
-	for (i = 0; num[i] != '\0', i++)
+	for (i = 0; num[i] != '\0'; i++)
 		;
 	write(STDOUT_FILENO, num, i);
-	free(n);
+	free(num);
 	write(STDOUT_FILENO, ":", 2);
 
-	for (i = 0; s[i] != '\0', i++)
+	for (i = 0; s[i] != '\0'; i++)
 		;
 	write(STDOUT_FILENO, s, i);
 	write(STDOUT_FILENO, ":", 2);

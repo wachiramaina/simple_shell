@@ -16,7 +16,7 @@ int in_built(char **tkn, lists *env, int n, char **cmd)
 
 	if (strcompare(tkn[0], "exit") == 0)
 	{
-		i = _exit(tkn, env, n, cmd);
+		i = ex(tkn, env, n, cmd);
 	}
 	else if (strcompare(tkn[0], "env") == 0)
 	{

@@ -11,7 +11,7 @@
 
 int cd_(char **s, lists *env, int i)
 {
-	char *curr = NUll; *directory = NULL;
+	char *curr = NULL, *directory = NULL;
 	int ex_st = 0;
 
 	curr = getcwd(curr, 0);

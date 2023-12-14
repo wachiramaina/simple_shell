@@ -11,7 +11,7 @@
  * Retrun: 0 or 2
  */
 
-int exec_cd(lists *env, char *curr_dir, char *dir_path, char *s, int  n)
+int exec_cd(lists *env, char *curr_dir, char *dir_path, char *s, int n)
 {
 	int i = 0;
 
@@ -19,9 +19,9 @@ int exec_cd(lists *env, char *curr_dir, char *dir_path, char *s, int  n)
 	{
 		set_env(&env, "OLDPWD", curr_dir);
 		free(curr_dir);
-		ch_dir(dir_path);
+		chdir(dir_path);
 		curr_dir = NULL;
-		curr_dir = get_cwd(curr_dir, 0);
+		curr_dir = getcwd(curr_dir, 0);
 		set_env(&env, "PWD", curr_dir);
 		free(curr_dir);
 	}

@@ -14,7 +14,7 @@ lists *env_linked(char **v)
 	h = NULL;
 	while (v[i] != NULL)
 	{
-		end_node(&head, v[i]);
+		end_node(&h, v[i]);
 		i++;
 	}
 	return (h);
@@ -27,7 +27,7 @@ lists *env_linked(char **v)
  * Return: 0 success
  */
 
-int print_env(char **str, list *v)
+int print_env(char **str, lists *v)
 {
 	free_double_ptr(str);
 	write_list(v);

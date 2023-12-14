@@ -1,4 +1,4 @@
-#inlcude "main.h"
+#include "main.h"
 
 /**
  * delete_node - deletes the ith node
@@ -18,9 +18,9 @@ int delete_node(lists **head, int i)
 	if (i == 0)
 	{
 		tmp = (*head)->next;
-		free((*head)->variable);
+		free((*head)->var);
 		free(*head);
-		*head = holder;
+		*head = tmp;
 		return (1);
 	}
 
@@ -32,8 +32,8 @@ int delete_node(lists **head, int i)
 		node = node->next;
 	}
 	tmp = node->next;
-	node-> = tmp->next;
-	free(tmp->variable);
+	node->next = tmp->next;
+	free(tmp->var);
 	free(tmp);
 	return(1);
 }

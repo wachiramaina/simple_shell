@@ -15,16 +15,16 @@ lists *end_node (lists **head, char *s)
 	if (head == NULL || s == NULL)
 		return (NULL);
 	new_node = malloc(sizeof(lists));
-	if (new == NULL)
-		retrun (NULL);
+	if (new_node == NULL)
+		return (NULL);
 
-	new_node->variable = strduplicate(s);
+	new_node->var = strduplicate(s);
 	new_node->next = NULL;
 
 	tmp = *head;
 	if (tmp != NULL)
 	{
-		while(tmp-next != NULL)
+		while(tmp->next != NULL)
 		{
 			tmp = tmp->next;
 		}

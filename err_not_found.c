@@ -14,7 +14,7 @@ void cmd_not_found(char *s, int n, lists *env)
 	int i;
 	char *sh, *num;
 
-	sh = _env("_", env);
+	sh = get_environ("_", env);
 	for (i = 0; sh[i] != '\0'; i++)
 		;
 	write(STDOUT_FILENO, sh, i);

@@ -12,7 +12,7 @@ char *which(char *s, lists *env)
 	char *p, *ct = NULL, **toks;
 	int i = 0;
 
-	p = _env("PATH", env);
+	p = get_environ("PATH", env);
 	toks = str_token(p, ":");
 	free(p);
 
